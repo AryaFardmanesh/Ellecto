@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
-import '@ant-design/v5-patch-for-react-19';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@ant-design/v5-patch-for-react-19';
 
 export const metadata: Metadata = {
 	title: 'Ellecto',
