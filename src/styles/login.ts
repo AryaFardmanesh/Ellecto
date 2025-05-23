@@ -6,7 +6,7 @@ const stylesheet: {
 } = {
 	container: {
 		width: '100vw',
-		height: '100vh',
+		height: '92vh',
 	},
 	card: {
 		width: '380px',
