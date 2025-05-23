@@ -20,6 +20,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@ant-design/v5-patch-for-react-19": "^1.0.3",
 		"antd": "^5.25.2",
 		"bootstrap": "^5.3.6",
 		"next": "15.1.8",
