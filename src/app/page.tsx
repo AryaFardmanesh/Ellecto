@@ -24,6 +24,13 @@ const stylesheet: { [key: string]: CSSProperties } = {
 	},
 };
 
+const internalConfig = {
+	sliderImage: {
+		width: 2000,
+		height: 500,
+	}
+};
+
 export default function Home() {
 	return (
 	<>
@@ -35,8 +42,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-1.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -44,8 +51,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-2.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -53,8 +60,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-3.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -62,8 +69,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-4.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -71,8 +78,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-5.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -80,8 +87,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-6.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
@@ -89,8 +96,8 @@ export default function Home() {
 					<Image
 						src='/slider/p-7.jpg'
 						alt='Product image for slider.'
-						width={ 2000 }
-						height={ 500 }
+						width={ internalConfig.sliderImage.width }
+						height={ internalConfig.sliderImage.height }
 						style={ stylesheet.sliderImage }
 					/>
 				</div>
