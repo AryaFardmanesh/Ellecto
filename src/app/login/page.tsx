@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import {
 	Card,
@@ -61,6 +62,7 @@ export default function Login() {
 							onChange={ handleChange }
 							onBlur={ handleBlur }
 							value={ values.username }
+							required
 						/>
 						{ touched.username ? <small style={{ color: colors.danger }}>{ errors.username }</small> : null }
 					</div>
@@ -82,10 +84,12 @@ export default function Login() {
 							onChange={ handleChange }
 							onBlur={ handleBlur }
 							value={ values.password }
+							required
 						/>
 						{ touched.password ? <small style={{ color: colors.danger }}>{ errors.password }</small> : null }
 					</div>
-					<button style={ stylesheet.submitBtn } className='mt-3'>Login</button>
+					<button type='submit' style={ stylesheet.submitBtn } className='mt-3'>Login</button>
+					<small style={{ display: 'block', textAlign: 'center' }} className='mt-3'>If you don't have account, <Link href="/signup">sign up</Link> for free.</small>
 					</form>
 				) }
 				</Formik>
