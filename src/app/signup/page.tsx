@@ -9,6 +9,7 @@ import {
 import {
 	UserOutlined,
 	KeyOutlined,
+	MailOutlined,
 	EyeOutlined,
 	EyeInvisibleOutlined,
 } from '@ant-design/icons';
@@ -95,7 +96,7 @@ export default function SignUp() {
 						<Input
 							type='email'
 							placeholder='Enter email'
-							prefix={ <UserOutlined /> }
+							prefix={ <MailOutlined /> }
 							id='email-input'
 							name='email'
 							onChange={ handleChange }
