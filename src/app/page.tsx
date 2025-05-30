@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CSSProperties } from 'react';
-import { Carousel, Typography, Card, Row } from 'antd';
+import { Carousel, Typography, Card, Col, Row } from 'antd';
 import Navbar from '@/components/navbar';
 import colors from '@/utils/colors';
 import './home.css';
@@ -37,7 +37,7 @@ const stylesheet: { [key: string]: CSSProperties } = {
 		padding: '10px'
 	},
 	cardProductSliderImage: {
-		width: '210px',
+		width: '100%',
 		height: '145px',
 		borderRadius: 6,
 	},
@@ -45,6 +45,15 @@ const stylesheet: { [key: string]: CSSProperties } = {
 		background: colors.primary,
 		marginTop: 5,
 		color: 'white'
+	},
+	cardProductMain: {
+		minWidth: '210px',
+		height: '260px',
+		padding: '10px',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 	},
 };
 
@@ -74,6 +83,68 @@ function ProductCardRowSlider(
 	</Card>
 	);
 }
+
+function ProductCardMain(
+	image: string,
+	name: string,
+	price: number | string,
+	key: number | string
+): React.ReactNode {
+	return (
+	<Card className='card-no-padding'>
+		<div style={ stylesheet.cardProductMain }>
+			<Image
+				src={ image }
+				alt='Product image for slider.'
+				width={ internalConfig.sliderImage.width }
+				height={ internalConfig.sliderImage.height }
+				style={ stylesheet.cardProductSliderImage }
+			/>
+			<span className='fs-5'>{ name }</span>
+			<span className='badge' style={{ background: colors.primary }}>${ price }</span>
+			<Link href={ `/product?pid=${ key }` } style={ stylesheet.cardProductSliderLink } className='btn btn-sm w-100'>See</Link>
+		</div>
+	</Card>
+	);
+}
+
+const productsMain = [
+	{
+		image: '/slider/p-1.jpg',
+		name: 'Cup',
+		price: 18.99,
+	},
+	{
+		image: '/slider/p-2.jpg',
+		name: 'Blue Cup',
+		price: 19.20,
+	},
+	{
+		image: '/slider/p-3.jpg',
+		name: 'Mobile',
+		price: 699.99,
+	},
+	{
+		image: '/slider/p-4.jpg',
+		name: 'White Cup',
+		price: 16.00,
+	},
+	{
+		image: '/slider/p-5.jpg',
+		name: 'IPhone X',
+		price: 490.00,
+	},
+	{
+		image: '/slider/p-6.jpg',
+		name: 'IPhone X Black',
+		price: 490.00,
+	},
+	{
+		image: '/slider/p-7.jpg',
+		name: 'Sky Blue Cup',
+		price: 18.99,
+	},
+];
 
 export default function Home() {
 	return (
@@ -162,6 +233,25 @@ export default function Home() {
 					{ ProductCardRowSlider( '/slider/p-7.jpg', 7 ) }
 				</Row>
 			</Card>
+		</div>
+
+		<div className="container my-4">
+			<div className="row g-3">
+				{
+					productsMain.map( ( value, index ) => {
+						return (
+							<div className="col-12 col-sm-6 col-md-4 col-lg-3" key={ index }>
+								{ ProductCardMain(
+									value.image,
+									value.name,
+									value.price,
+									index
+								) }
+							</div>
+						);
+					} )
+				}
+			</div>
 		</div>
 	</>
 	);
