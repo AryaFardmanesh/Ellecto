@@ -7,6 +7,7 @@ import {
 	MailOutlined
 } from '@ant-design/icons';
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const { Title, Paragraph, Link } = Typography;
 
@@ -47,6 +48,8 @@ export default function About() {
 				</div>
 			</Typography>
 		</div>
+
+		<Footer />
 	</>
 	);
 }
