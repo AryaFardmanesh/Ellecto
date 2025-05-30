@@ -55,6 +55,26 @@ const internalConfig = {
 	}
 };
 
+function ProductCardRowSlider(
+	image: string,
+	key: number | string
+): React.ReactNode {
+	return (
+	<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
+		<div className='d-flex flex-column justify-content-between'>
+			<Image
+				src={ image }
+				alt='Product image for slider.'
+				width={ internalConfig.sliderImage.width }
+				height={ internalConfig.sliderImage.height }
+				style={ stylesheet.cardProductSliderImage }
+			/>
+			<Link href={ `/product?pid=${ key }` } style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
+		</div>
+	</Card>
+	);
+}
+
 export default function Home() {
 	return (
 	<>
@@ -133,90 +153,13 @@ export default function Home() {
 
 			<Card>
 				<Row style={ stylesheet.cardProductSlider }>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-1.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-2.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-3.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-4.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-5.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-6.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
-					<Card style={ stylesheet.cardProductSliderCard } className='card-no-padding'>
-						<div className='d-flex flex-column justify-content-between'>
-							<Image
-								src='/slider/p-7.jpg'
-								alt='Product image for slider.'
-								width={ internalConfig.sliderImage.width }
-								height={ internalConfig.sliderImage.height }
-								style={ stylesheet.cardProductSliderImage }
-							/>
-							<Link href='/product?pid=1' style={ stylesheet.cardProductSliderLink } className='btn btn-sm'>See</Link>
-						</div>
-					</Card>
+					{ ProductCardRowSlider( '/slider/p-1.jpg', 1 ) }
+					{ ProductCardRowSlider( '/slider/p-2.jpg', 2 ) }
+					{ ProductCardRowSlider( '/slider/p-3.jpg', 3 ) }
+					{ ProductCardRowSlider( '/slider/p-4.jpg', 4 ) }
+					{ ProductCardRowSlider( '/slider/p-5.jpg', 5 ) }
+					{ ProductCardRowSlider( '/slider/p-6.jpg', 6 ) }
+					{ ProductCardRowSlider( '/slider/p-7.jpg', 7 ) }
 				</Row>
 			</Card>
 		</div>
