@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@ant-design/v5-patch-for-react-19';
+import './global.css';
 
 export const metadata: Metadata = {
 	title: 'Ellecto',
