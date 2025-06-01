@@ -2,9 +2,7 @@
 
 import Navbar from '@/components/navbar';
 import colors from '@/utils/colors';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { CSSProperties, use, useEffect, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import type { MenuProps, TableProps } from 'antd';
 import {
 	Menu,
@@ -261,10 +259,6 @@ const teamData = [
 ];
 
 const stylesheet: { [key: string]: CSSProperties } = {};
-
-const _FormSchema = Yup.object( {
-	_: Yup.string().min( 0 ).max( 0 ),
-} );
 
 function AccountsPage(): React.ReactNode {
 	return (
