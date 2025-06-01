@@ -38,7 +38,7 @@ cd ellecto
 
 # Install dependencies
 npm install
-````
+```
 
 ### Development Server
 
