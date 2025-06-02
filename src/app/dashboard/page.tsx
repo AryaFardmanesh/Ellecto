@@ -123,7 +123,7 @@ const columns: TableProps<AccountsTableDataType>[ 'columns' ] = [
 		<>
 		<Tag color={ ( () => {
 			let _role = role.toLowerCase();
-			if ( role == 'admin' )
+			if ( _role == 'admin' )
 				return 'geekblue';
 			return 'green';
 		} )() } key={ role }>{ role }</Tag>
@@ -133,7 +133,7 @@ const columns: TableProps<AccountsTableDataType>[ 'columns' ] = [
 	{
 		title: 'Action',
 		key: 'action',
-		render: ( _, record ) => (
+		render: () => (
 			<Space size="middle">
 				<button className='btn btn-sm' style={{ background: colors.danger, color: 'white' }}>Ban</button>
 				<button className='btn btn-sm' style={{ background: colors.danger, color: 'white' }}>Delete</button>
@@ -257,8 +257,6 @@ const teamData = [
 		]
 	},
 ];
-
-const stylesheet: { [key: string]: CSSProperties } = {};
 
 function AccountsPage(): React.ReactNode {
 	return (
@@ -483,7 +481,7 @@ function LicencePage(): React.ReactNode {
 		Copyright (c) 2025 Arya Fardmanesh<br />
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy<br />
-		of this software and associated documentation files (the "Software"), to deal<br />
+		of this software and associated documentation files (the Software), to deal<br />
 		in the Software without restriction, including without limitation the rights<br />
 		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br />
 		copies of the Software, and to permit persons to whom the Software is<br />
@@ -492,7 +490,7 @@ function LicencePage(): React.ReactNode {
 		The above copyright notice and this permission notice shall be included in all<br />
 		copies or substantial portions of the Software.<br />
 
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br />
+		THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br />
 		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br />
 		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br />
 		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br />
@@ -504,8 +502,8 @@ function LicencePage(): React.ReactNode {
 }
 
 export default function Dashboard() {
-	useEffect(() => {
-	  require("bootstrap/dist/js/bootstrap.bundle.min.js");
+	useEffect( () => {
+		require( "bootstrap/dist/js/bootstrap.bundle.min.js" );
 	}, []);
 
 	const [ activePage, setActivePage ] = useState( 'Account' );
