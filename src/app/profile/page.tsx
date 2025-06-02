@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import colors from '@/utils/colors';
+import { colors } from '@/utils/colors';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Formik } from 'formik';

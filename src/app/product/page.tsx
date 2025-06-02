@@ -8,7 +8,7 @@ import {
 	notification,
 } from 'antd';
 import type { NotificationArgsProps } from 'antd';
-import colors from '@/utils/colors';
+import { colors } from '@/utils/colors';
 
 type NotificationPlacement = NotificationArgsProps[ 'placement' ];
 

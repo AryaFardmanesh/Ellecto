@@ -1,7 +1,7 @@
 'use client';
 
 import Navbar from '@/components/navbar';
-import colors from '@/utils/colors';
+import { colors } from '@/utils/colors';
 import { useEffect, useState } from 'react';
 import type { MenuProps, TableProps } from 'antd';
 import {

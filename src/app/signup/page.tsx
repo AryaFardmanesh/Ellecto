@@ -15,7 +15,7 @@ import {
 } from '@ant-design/icons';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import colors from '@/utils/colors';
+import { colors } from '@/utils/colors';
 import stylesheet from '@/styles/login';
 
 const formSchema = Yup.object( {
