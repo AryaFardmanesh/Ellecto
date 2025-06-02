@@ -382,8 +382,8 @@ function TeamsPage(): React.ReactNode {
 		<span className="fs-4 mb-3 d-block">Teams</span>
 
 		{
-			teamData.map( team => {
-				return <Card className='mt-2' title={ team.title }>
+			teamData.map( ( team, index ) => {
+				return <Card key={ index } className='mt-2' title={ team.title }>
 					<table className='table table-striped'>
 						<thead>
 							<tr>
