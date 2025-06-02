@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CSSProperties } from 'react';
-import { Carousel, Typography, Card, Col, Row } from 'antd';
+import { Carousel, Typography, Card, Row } from 'antd';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import colors from '@/utils/colors';
