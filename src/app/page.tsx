@@ -246,7 +246,7 @@ export default function Home() {
 									value.image,
 									value.name,
 									value.price,
-									index
+									index + 1
 								) }
 							</div>
 						);
