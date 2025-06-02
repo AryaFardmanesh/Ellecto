@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/navbar';
 import colors from '@/utils/colors';
-import { CSSProperties, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { MenuProps, TableProps } from 'antd';
 import {
 	Menu,
@@ -122,7 +122,7 @@ const columns: TableProps<AccountsTableDataType>[ 'columns' ] = [
 		render: ( _, { role } ) => (
 		<>
 		<Tag color={ ( () => {
-			let _role = role.toLowerCase();
+			const _role = role.toLowerCase();
 			if ( _role == 'admin' )
 				return 'geekblue';
 			return 'green';
