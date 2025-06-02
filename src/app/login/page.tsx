@@ -89,7 +89,7 @@ export default function Login() {
 						{ touched.password ? <small style={{ color: colors.danger }}>{ errors.password }</small> : null }
 					</div>
 					<button type='submit' style={ stylesheet.submitBtn } className='mt-3'>Login</button>
-					<small style={{ display: 'block', textAlign: 'center' }} className='mt-3'>If you don't have account, <Link href="/signup">sign up</Link> for free.</small>
+					<small style={{ display: 'block', textAlign: 'center' }} className='mt-3'>If you dont have account, <Link href="/signup">sign up</Link> for free.</small>
 					</form>
 				) }
 				</Formik>
