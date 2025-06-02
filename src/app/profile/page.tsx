@@ -149,7 +149,7 @@ export default function Profile() {
 										email: 'admin@gmail.com',
 									}}
 									validationSchema={ profileFormSchema }
-									onSubmit={ ( values, action ) => {
+									onSubmit={ ( values ) => {
 										console.log( values );
 										setFullName( values.fname + ' ' + values.lname );
 									} }
@@ -264,7 +264,7 @@ export default function Profile() {
 										description: '',
 									}}
 									validationSchema={ ticketFormSchema }
-									onSubmit={ ( values, action ) => {
+									onSubmit={ ( values ) => {
 										console.log( values );
 									} }
 								>
