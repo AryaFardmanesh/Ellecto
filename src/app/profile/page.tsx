@@ -111,8 +111,8 @@ export default function Profile() {
 	} ).reduce( ( value, current ) => value + current );
 
 	const [ fullName, setFullName ] = useState( 'Arya Fardmanesh' );
-	const [ cartPrice, setCartPrice ] = useState<number>( totalCartPrice );
-	const [ accountBalance, setAccountBalance ] = useState<number>( 118 );
+	const [ cartPrice ] = useState<number>( totalCartPrice );
+	const [ accountBalance ] = useState<number>( 118 );
 
 	return (
 	<>
