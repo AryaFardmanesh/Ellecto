@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import colors from '@/utils/colors';
+import { colors } from '@/utils/colors';
 
 const stylesheet: {
 	[key: string]: CSSProperties
