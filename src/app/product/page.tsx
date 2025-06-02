@@ -1,7 +1,7 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { useState, useMemo, createContext, Suspense } from 'react';
 import {
 	Card,
@@ -14,9 +14,33 @@ type NotificationPlacement = NotificationArgsProps[ 'placement' ];
 
 const Context = createContext({ name: 'Default' });
 
-export default function Product() {
-	let pid = null;
+function ProductImageReq () {
+	const searchParams = useSearchParams();
+	const pid = searchParams.get( 'pid' );
 
+	if ( pid === null ) {
+		if ( typeof window !== 'undefined' ) {
+			window.history.back();
+		}
+		return null;
+	}
+
+	return (
+	<Image
+		src={ `/slider/p-${ pid }.jpg` }
+		width={ 250 }
+		height={ 250 }
+		alt='Product Image'
+		style={{
+			width: 250,
+			height: 250,
+			borderRadius: '6px',
+		}}
+	/>
+	);
+}
+
+export default function Product() {
 	const totalProductCount = 10;
 	const [ productCartsCount, setProductCartsCount ] = useState( 1 );
 
@@ -36,34 +60,13 @@ export default function Product() {
 	return (
 	<Context.Provider value={ contextValue }>
 	{ contextHolder }
-	<Suspense>
-	{
-		( () => {
-			const searchParams = useSearchParams();
-			pid = searchParams.get( 'pid' );
-
-			if ( pid === null ) {
-				window.history.back();
-			}
-
-			return null;
-		} )()
-	}
 	<div className="container my-5">
 		<Card title="Product">
 			<div className='row'>
 				<div className="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3">
-					<Image
-						src={ `/slider/p-${ pid }.jpg` }
-						width={ 250 }
-						height={ 250 }
-						alt='Product Image'
-						style={{
-							width: 250,
-							height: 250,
-							borderRadius: '6px',
-						}}
-					/>
+					<Suspense>
+					<ProductImageReq />
+					</Suspense>
 				</div>
 				<div className="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 mt-1 mt-md-0 d-flex flex-column">
 					<span className='fs-2 d-block'>Cup</span>
@@ -126,7 +129,6 @@ export default function Product() {
 			</div>
 		</Card>
 	</div>
-	</Suspense>
 	</Context.Provider>
 	);
 }
