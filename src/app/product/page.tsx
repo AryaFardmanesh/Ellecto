@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { useState, useMemo, createContext } from 'react';
+import { useState, useMemo, createContext, Suspense } from 'react';
 import {
 	Card,
 	notification,
@@ -15,12 +15,7 @@ type NotificationPlacement = NotificationArgsProps[ 'placement' ];
 const Context = createContext({ name: 'Default' });
 
 export default function Product() {
-	const searchParams = useSearchParams();
-	const pid = searchParams.get( 'pid' );
-
-	if ( pid === null ) {
-		window.history.back();
-	}
+	let pid = null;
 
 	const totalProductCount = 10;
 	const [ productCartsCount, setProductCartsCount ] = useState( 1 );
@@ -41,6 +36,19 @@ export default function Product() {
 	return (
 	<Context.Provider value={ contextValue }>
 	{ contextHolder }
+	<Suspense>
+	{
+		( () => {
+			const searchParams = useSearchParams();
+			pid = searchParams.get( 'pid' );
+
+			if ( pid === null ) {
+				window.history.back();
+			}
+
+			return null;
+		} )()
+	}
 	<div className="container my-5">
 		<Card title="Product">
 			<div className='row'>
@@ -118,6 +126,7 @@ export default function Product() {
 			</div>
 		</Card>
 	</div>
+	</Suspense>
 	</Context.Provider>
 	);
 }
